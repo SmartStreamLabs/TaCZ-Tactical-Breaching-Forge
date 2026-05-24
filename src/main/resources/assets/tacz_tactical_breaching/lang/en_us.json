@@ -1,0 +1,20 @@
+{
+  "item.tacz_tactical_breaching.frag_grenade": "Frag Grenade",
+  "item.tacz_tactical_breaching.flashbang_grenade": "Flashbang Grenade",
+  "tacz.type.explosives.name": "Explosions & Projectiles",
+  "subtitles.tacz_tactical_breaching.frag_explosion_close": "Frag grenade blast",
+  "subtitles.tacz_tactical_breaching.frag_explosion_far": "Distant frag explosion",
+  "subtitles.tacz_tactical_breaching.frag_explosion_indoor": "Indoor blast reverberates",
+  "subtitles.tacz_tactical_breaching.frag_explosion_debris": "Explosion debris scatters",
+  "subtitles.tacz_tactical_breaching.frag_throw": "Grenade thrown",
+  "subtitles.tacz_tactical_breaching.frag_bounce": "Grenade bounces",
+  "subtitles.tacz_tactical_breaching.frag_roll": "Grenade rolls",
+  "subtitles.tacz_tactical_breaching.flashbang_detonate": "Flashbang detonates",
+  "subtitles.tacz_tactical_breaching.flashbang_indoor": "Flashbang reverberates",
+  "subtitles.tacz_tactical_breaching.flashbang_ring": "Ears ringing",
+  "subtitles.tacz_tactical_breaching.flashbang_throw": "Flashbang thrown",
+  "subtitles.tacz_tactical_breaching.flashbang_bounce": "Flashbang bounces",
+  "subtitles.tacz_tactical_breaching.flashbang_roll": "Flashbang rolls",
+  "key.tacz_tactical_breaching.toggle_nightstick_flashlight": "Toggle Nightstick Flashlight",
+  "key.categories.tacz_tactical_breaching": "TaCZ Tactical Breaching"
+}
