@@ -1,0 +1,20 @@
+{
+  "vertex": "tacz_tactical_breaching:flashlight_spotlight",
+  "fragment": "tacz_tactical_breaching:flashlight_spotlight",
+  "attributes": ["Position"],
+  "samplers": [{"name": "SceneColor"}, {"name": "SceneDepth"}],
+  "uniforms": [
+    {"name": "InverseViewProjection", "type": "matrix4x4", "count": 16, "values": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
+    {"name": "ViewProjection", "type": "matrix4x4", "count": 16, "values": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]},
+    {"name": "ScreenSize", "type": "float", "count": 2, "values": [1,1]},
+    {"name": "LightOrigin", "type": "float", "count": 3, "values": [0,0,0]},
+    {"name": "LightDirection", "type": "float", "count": 3, "values": [0,0,1]},
+    {"name": "LightRange", "type": "float", "count": 1, "values": [18]},
+    {"name": "LightIntensity", "type": "float", "count": 1, "values": [1]},
+    {"name": "HotspotStrength", "type": "float", "count": 1, "values": [0.36]},
+    {"name": "SpillStrength", "type": "float", "count": 1, "values": [0.13]},
+    {"name": "BeamSoftness", "type": "float", "count": 1, "values": [1]},
+    {"name": "Quality", "type": "int", "count": 1, "values": [1]},
+    {"name": "LightColor", "type": "float", "count": 3, "values": [1,1,1]}
+  ]
+}

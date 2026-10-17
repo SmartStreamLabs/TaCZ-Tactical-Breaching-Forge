@@ -1,0 +1,43 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "tag": "c:ingots/iron"
+      },
+      "count": 3
+    },
+    {
+      "item": {
+        "tag": "c:gunpowders"
+      },
+      "count": 4
+    },
+    {
+      "item": {
+        "item": "minecraft:redstone"
+      },
+      "count": 3
+    },
+    {
+      "item": {
+        "item": "minecraft:glowstone_dust"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "item": "minecraft:string"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:explosives",
+    "item": {
+      "id": "tacz_tactical_breaching:flashbang_grenade",
+      "count": 2
+    }
+  }
+}

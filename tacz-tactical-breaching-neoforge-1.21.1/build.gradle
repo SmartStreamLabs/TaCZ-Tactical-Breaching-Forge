@@ -1,0 +1,146 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.74'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "tactical_breaching-tacz-sbw-neoforge-1.21.1"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'NeoForged'
+        url = 'https://maven.neoforged.net/releases'
+    }
+    flatDir {
+        dir '../TACZ-1.21.1-neoforge-1.21.1/build/libs'
+        dir '../TACZ-1.21.1-neoforge-1.21.1/libs'
+    }
+}
+
+def taczJarCandidates = [
+        file('../TACZ-1.21.1-neoforge-1.21.1/build/libs/tacz-neoforge-1.21.1-1.1.8-r3.jar'),
+        file('../TACZ-1.21.1-neoforge-1.21.1/build/libs/tacz-neoforge-1.21.1-1.1.8-hotfix-r3.jar'),
+        file('run/client/mods/tacz-neoforge-1.21.1-1.1.8-hotfix-r3.jar')
+]
+def taczJar = taczJarCandidates.find { it.exists() }
+def taczLibs = fileTree(dir: '../TACZ-1.21.1-neoforge-1.21.1/libs', include: ['*.jar'])
+
+neoForge {
+    version = neo_version
+    parchment {
+        minecraftVersion = minecraft_version
+        mappingsVersion = parchment_mappings_version
+    }
+
+    runs {
+        configureEach {
+            systemProperty 'forge.logging.console.level', 'info'
+        }
+
+        client {
+            client()
+            gameDirectory = file('run/client')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        server {
+            server()
+            gameDirectory = file('run/server')
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+    }
+
+    mods {
+        create(mod_id) {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    if (taczJar != null) {
+        compileOnly files(taczJar)
+        runtimeOnly files(taczJar)
+    } else {
+        logger.warn('TaCZ NeoForge jar was not found. Put tacz-neoforge-1.21.1-1.1.8-hotfix-r3.jar in run/client/mods or ../TACZ-1.21.1-neoforge-1.21.1/build/libs.')
+    }
+    compileOnly taczLibs
+}
+
+// TaCZ is a required external mod. Keep it out of this addon's jar while
+// making the local NeoForge development client behave like a real modpack.
+def syncTaczClientMod = tasks.register('syncTaczClientMod', Copy) {
+    onlyIf {
+        taczJar != null
+                && taczJar.exists()
+                && taczJar.parentFile.canonicalFile != file('run/client/mods').canonicalFile
+    }
+    from taczJar
+    into layout.projectDirectory.dir('run/client/mods')
+    rename { 'tacz-neoforge-1.21.1-1.1.8-hotfix-r3.jar' }
+}
+
+tasks.named('prepareClientRun').configure {
+    dependsOn(syncTaczClientMod)
+}
+
+tasks.withType(ProcessResources).configureEach {
+    def replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            tacz_version_range     : tacz_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                'MixinConfigs': 'tacz_tactical_breaching.mixins.json'
+        ])
+    }
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/repo"
+        }
+    }
+}

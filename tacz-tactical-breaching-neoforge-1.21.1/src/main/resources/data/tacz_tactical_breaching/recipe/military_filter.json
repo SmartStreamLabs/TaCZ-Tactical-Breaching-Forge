@@ -1,0 +1,37 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:charcoal"
+      },
+      "count": 4
+    },
+    {
+      "item": {
+        "item": "minecraft:paper"
+      },
+      "count": 3
+    },
+    {
+      "item": {
+        "tag": "c:ingots/iron"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "tag": "c:ingots/copper"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:misc",
+    "item": {
+      "id": "tacz_tactical_breaching:military_filter",
+      "count": 1
+    }
+  }
+}

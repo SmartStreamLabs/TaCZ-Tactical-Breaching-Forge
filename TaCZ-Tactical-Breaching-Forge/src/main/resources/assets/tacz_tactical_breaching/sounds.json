@@ -1,0 +1,260 @@
+{
+  "frag_explosion_close": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_explosion_close",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_explosion_close",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_explosion_far": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_explosion_far",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_explosion_far",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_explosion_indoor": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_explosion_indoor",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_explosion_indoor",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_explosion_debris": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_explosion_debris",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_debris_tail",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_throw": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_throw",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_throw",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_bounce": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_bounce",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_bounce",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "frag_roll": {
+    "subtitle": "subtitles.tacz_tactical_breaching.frag_roll",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:grenade/frag_roll",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_detonate": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_detonate",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_detonate",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_indoor": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_indoor",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_indoor",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_ring": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_ring",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_ring",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_throw": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_throw",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_throw",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_bounce": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_bounce",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_bounce",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "flashbang_roll": {
+    "subtitle": "subtitles.tacz_tactical_breaching.flashbang_roll",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:flashbang/flashbang_roll",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_rifle_pop": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_rifle_pop",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/rifle_pop_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      },
+      {
+        "name": "tacz_tactical_breaching:distant/rifle_pop_2",
+        "stream": false,
+        "volume": 0.9,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_rifle_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_rifle_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/rifle_echo_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      },
+      {
+        "name": "tacz_tactical_breaching:distant/rifle_echo_2",
+        "stream": false,
+        "volume": 0.9,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_pistol_pop": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_pistol_pop",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/pistol_pop_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      },
+      {
+        "name": "tacz_tactical_breaching:distant/pistol_pop_2",
+        "stream": false,
+        "volume": 0.85,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_sniper_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_sniper_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/sniper_echo_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_shotgun_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_shotgun_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/shotgun_echo_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_machinegun_far": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_machinegun_far",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/machinegun_far_1",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_extreme_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_extreme_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/gun_distance_7000",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_far_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_far_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/gun_distance_3000",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_close_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_close_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/gun_distance_1000",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "distant_near_echo": {
+    "subtitle": "subtitles.tacz_tactical_breaching.distant_near_echo",
+    "sounds": [
+      {
+        "name": "tacz_tactical_breaching:distant/gun_distance_300",
+        "stream": false,
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  }
+}

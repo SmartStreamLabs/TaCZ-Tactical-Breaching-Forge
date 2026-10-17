@@ -1,0 +1,37 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:leather"
+      },
+      "count": 4
+    },
+    {
+      "item": {
+        "item": "minecraft:glass_pane"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "tag": "c:ingots/iron"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "item": "minecraft:charcoal"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:misc",
+    "item": {
+      "id": "tacz_tactical_breaching:gas_mask",
+      "count": 1
+    }
+  }
+}

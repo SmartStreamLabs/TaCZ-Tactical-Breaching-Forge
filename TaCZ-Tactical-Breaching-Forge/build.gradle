@@ -1,0 +1,104 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.141'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "tactical_breaching-tacz-sbw-forge-1.20.1"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+repositories {
+    maven {
+        name = 'Curse Maven'
+        url = 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
+    maven {
+        name = 'Modrinth Maven'
+        url = 'https://api.modrinth.com/maven'
+        content {
+            includeGroup 'maven.modrinth'
+        }
+    }
+    mavenCentral()
+}
+
+legacyForge {
+    version = forge_version
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+
+    mods {
+        tacz_tactical_breaching {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+mixin {
+    config 'tacz_tactical_breaching.mixins.json'
+}
+
+dependencies {
+    modCompileOnly 'curse.maven:timeless-and-classics-zero-1028108:8055552'
+    // Keep TaCZ available in the development client without bundling it into this addon jar.
+    modRuntimeOnly 'curse.maven:timeless-and-classics-zero-1028108:8055552'
+    // Development-only compatibility test stack. These mods are never bundled into this addon's jar.
+    modRuntimeOnly 'maven.modrinth:cloth-config:t8TXrZvZ'
+    modRuntimeOnly 'maven.modrinth:geckolib:aC5KMoNg'
+    modRuntimeOnly 'maven.modrinth:explosion-overhaul-a-new-level-of-destruction:93XGK0uB'
+    if (providers.gradleProperty('withSuperbWarfare').map { it.toBoolean() }.getOrElse(true)) {
+        modRuntimeOnly 'maven.modrinth:superb-warfare:gpMrYqyr'
+        modRuntimeOnly 'maven.modrinth:kotlin-for-forge:Zsh14XeQ'
+    }
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            forge_version          : forge_version,
+            loader_version_range   : loader_version_range,
+            tacz_version_range     : tacz_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                'MixinConfigs': 'tacz_tactical_breaching.mixins.json'
+        ])
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.victoriomods.taczballisticbreaching.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "com.victoriomods.taczballisticbreaching.mixin.TaczTacticalBreachingMixinPlugin",
+  "mixins": [
+    "LivingEntityAimMixin",
+    "LivingEntityReloadMixin",
+    "LivingEntityShootMixin",
+    "LivingEntitySprintMixin",
+    "SuperbWarfareRayHitMixin",
+    "SuperbWarfareProjectileMixin",
+    "SuperbWarfareMagazineMixin"
+  ],
+  "client": [
+    "LocalPlayerReloadMixin",
+    "LocalPlayerShootMixin",
+    "LocalPlayerSprintMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

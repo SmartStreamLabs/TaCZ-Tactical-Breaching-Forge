@@ -1,0 +1,37 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:diamond"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "tag": "forge:ingots/iron"
+      },
+      "count": 8
+    },
+    {
+      "item": {
+        "item": "minecraft:netherite_scrap"
+      },
+      "count": 1
+    },
+    {
+      "item": {
+        "item": "minecraft:leather"
+      },
+      "count": 6
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:misc",
+    "item": {
+      "item": "tacz_tactical_breaching:military_grade_plate",
+      "count": 1
+    }
+  }
+}

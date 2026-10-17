@@ -1,0 +1,31 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:charcoal"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "item": "minecraft:paper"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "tag": "c:nuggets/iron"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:misc",
+    "item": {
+      "id": "tacz_tactical_breaching:basic_filter",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "tacz:gun_smith_table_crafting",
+  "materials": [
+    {
+      "item": {
+        "item": "minecraft:leather"
+      },
+      "count": 8
+    },
+    {
+      "item": {
+        "item": "minecraft:string"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "type": "custom",
+    "group": "tacz:misc",
+    "item": {
+      "item": "tacz_tactical_breaching:soft_armor_plate",
+      "count": 1
+    }
+  }
+}
